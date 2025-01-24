@@ -7,7 +7,7 @@ interface ChallengeCardProps {
 
 export default function ChallengeCard({ title, number }: ChallengeCardProps) {
   return (
-    <div className="border border-gray-200 rounded-e-md p-3 w-[25%]">
+    <div className="border-2 border-gray-200 rounded-xl px-8 py-6 w-[30%]">
       <div className="flex justify-between items-center gap-2">
         <div className="border-s-8 border-[#2B71F0] rounded-md p-2">
           <p className="text-[#344054] font-medium">{title}</p>
