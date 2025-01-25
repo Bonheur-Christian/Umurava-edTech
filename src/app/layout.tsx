@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SideBar from "@/components/SideBar";
 
 export const metadata: Metadata = {
   title: "EdTech",
@@ -13,6 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* <SideBar /> */}
       <body>{children}</body>
     </html>
   );
