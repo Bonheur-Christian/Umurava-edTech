@@ -11,9 +11,9 @@ import TopBar from "@/components/TopBar";
 export default function Home() {
   return (
     <div className={`flex ${workSans.className}`}>
-      <SideBar />
+      <SideBar logoImageUrl="./images/logo.png" />
       <div className="w-[80%]">
-        <TopBar />
+        <TopBar profileImageUrl="./images/profile.png" />
         <div className="bg-[#F9FAFB] py-6 ps-10 pe-10">
           <div className="flex justify-between">
             <div>

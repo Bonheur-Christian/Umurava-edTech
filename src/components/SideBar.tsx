@@ -7,24 +7,18 @@ import { VscSettingsGear } from "react-icons/vsc";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { GoGift } from "react-icons/go";
 import { GoSignOut } from "react-icons/go";
-import React, { useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export default function SideBar() {
-  const [activeSection, setActiveSection] = useState("Dashboard");
+interface SidebarItemProps{
+  logoImageUrl:string;
+}
 
-  const router = useRouter();
-
-  const handleNavigation = (section: string, path: string) => {
-    setActiveSection(section);
-    router.push(path);
-  };
-
+export default function SideBar({logoImageUrl}:SidebarItemProps) {
   return (
     <div className="w-[20%] min-h-screen bg-[#2B71F0] text-center py-6 px-6">
       <div className="min-h-screen space-y-6">
-        <img src="./images/logo.png" alt="" className="text-white" />
+        <img src={logoImageUrl} alt="Umurava Logo" className="text-white" />
         <SidebarItem
           href="/"
           icon={<GoHome className=" font-bold " size={25} />}
@@ -35,37 +29,29 @@ export default function SideBar() {
           icon={<FaRegFileLines className=" font-bold" size={25} />}
           label="Challenges & Hackathons"
         />
-        <div
-          onClick={() => handleNavigation("Community", "/community")}
-          className={`flex items-center gap-4 cursor-pointer${
-            activeSection === "Community"
-              ? "bg-white text-[#2B71F0] rounded-md"
-              : "hover:bg-white hover:text-[#2B71F0] hover:rounded-md text-white"
-          }  py-3 px-2 duration-300`}
-        >
-          <HiOutlineUserPlus className=" font-bold" size={25} />
-          <p className=" font-normal text-xl">Community</p>
-        </div>
+
+        <SidebarItem
+          href="/community"
+          label="Community"
+          icon={<HiOutlineUserPlus className=" font-bold" size={25} />}
+        />
       </div>
       <div className="space-y-4">
-        <div
-          onClick={() => handleNavigation("Settings", "/settings")}
-          className={`flex items-center gap-4 ${
-            activeSection === "Settings"
-              ? "bg-white text-[#2B71F0] rounded-md"
-              : "hover:bg-white hover:text-[#2B71F0] hover:rounded-md text-white"
-          }  py-3 px-2 duration-300`}
-        >
-          <VscSettingsGear className="font-bold" size={20} />
-          <p className="text-xl font-normal">Settings</p>
-        </div>
-
+        <SidebarItem
+          href="/settings"
+          icon={<VscSettingsGear className="font-bold" size={20} />}
+          label="Settings"
+        />
         <SidebarItem
           href="/help"
           icon={<TfiHeadphoneAlt className="font-bold" size={20} />}
           label="Help center"
         />
-
+        <SidebarItem
+          href="/family"
+          icon={<GoGift className="font-bold" size={20} />}
+          label="Refer family & friends"
+        />
         <div className="text-white text-xl flex gap-8 items-center py-12 px-3">
           <img
             src="./images/profile.png"

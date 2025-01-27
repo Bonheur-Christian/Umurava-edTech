@@ -1,6 +1,10 @@
 import { IoNotificationsOutline } from "react-icons/io5";
 
-export default function TopBar() {
+interface TopBarProps {
+  profileImageUrl: string;
+}
+
+export default function TopBar({ profileImageUrl}:TopBarProps) {
   return (
     <>
       <div className="flex justify-between items-center pb-4  ps-10 pe-10">
@@ -30,7 +34,7 @@ export default function TopBar() {
           />
 
           <img
-            src="./images/profile.png"
+            src={profileImageUrl}
             className="w-12  h-12 "
             alt="Profile Image"
           />

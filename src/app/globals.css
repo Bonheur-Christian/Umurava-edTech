@@ -5,3 +5,9 @@
 body{
   overflow-x: hidden;
 }
+
+
+.list-item {
+  text-indent: -1.5em; 
+  padding-left: 2em; 
+}
