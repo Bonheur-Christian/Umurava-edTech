@@ -8,11 +8,11 @@ export default function ChallengeDetails({
   description,
 }: ChallengeDetailsProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pe-6">
       <h1 className="text-2xl font-semibold text-gray-800">
         Project Brief : {projectName}
       </h1>
-      <p className="text-gray-600">{description}</p>
+      <p className="text-gray-600 text-xl">{description}</p>
       <p className="text-2xl font-semibold text-gray-800">Task:</p>
       <ChallengeDetailsItems
         productRequirements={[
@@ -53,34 +53,50 @@ const ChallengeDetailsItems: React.FC<{
         <div>
           {productRequirements.map((item, index) => (
             <ul key={index} className="list-disc list-inside">
-              <li className="list-item">{item}</li>
+              <li className="list-item text-gray-600 text-xl">{item}</li>
             </ul>
           ))}
         </div>
       </div>
       <div className="space-y-4">
-        <h1 className="text-2xl font-semibold text-gray-800">Product Design:</h1>
+        <h1 className="text-2xl font-semibold text-gray-800">
+          Product Design:
+        </h1>
         <div>
           {productDesign.map((item, index) => (
             <ul key={index} className="list-disc list-inside">
-              <li className="list-item">{item}</li>
+              <li className="list-item text-gray-600 text-xl">{item}</li>
             </ul>
           ))}
         </div>
       </div>
       <div className="space-y-4">
         <h1 className="text-2xl font-semibold text-gray-800">Deliverables:</h1>
-        <div >
+        <div>
           {deliverables.map((item, index) => (
             <ul key={index} className="list-disc list-inside">
-              <li className="list-item">{item}</li>
+              <li className="list-item text-gray-600 text-xl">{item}</li>
             </ul>
           ))}
         </div>
       </div>
       <div className="space-y-4">
         <h1 className="text-2xl font-semibold text-gray-800">Deliverables:</h1>
-        <ul className=""></ul>
+        <ul className="list-disc list-inside">
+          <li className="list-item text-gray-600 text-xl">
+            The Product Designer will provide all documents and deliverables to
+            the client before the review meetings
+          </li>
+        </ul>
+      </div>
+      <div className="space-y-4">
+        <h1 className="text-2xl font-semibold text-gray-800">NOTE:</h1>
+        <ul className="list-disc list-inside">
+          <li className="list-item text-gray-600 text-xl">
+            Find Product Requirements Summary and Features Description for Saway
+            Pay <a className="underline" href="">HERE</a>
+          </li>
+        </ul>
       </div>
     </div>
   );

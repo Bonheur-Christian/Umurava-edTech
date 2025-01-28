@@ -7,7 +7,7 @@ import workSans from "@/fonts/fonts";
 export default function challenges() {
   return (
     <div className={`flex ${workSans.className}`}>
-      <SideBar logoImageUrl="./images/logo.png"/>
+      <SideBar logoImageUrl="./images/logo.png" profileImageUrl="./images/profile.png"/>
       <div className="w-[80%]">
         <TopBar profileImageUrl="./images/profile.png"/>
         <div className="bg-[#F9FAFB] py-6 ps-10 pe-10">
