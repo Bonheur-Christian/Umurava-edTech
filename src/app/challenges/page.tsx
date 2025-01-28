@@ -7,9 +7,9 @@ import workSans from "@/fonts/fonts";
 export default function challenges() {
   return (
     <div className={`flex ${workSans.className}`}>
-      <SideBar logoImageUrl="./images/logo.png" profileImageUrl="./images/profile.png"/>
+      <SideBar logoImageUrl="/images/logo.png" profileImageUrl="/images/profile.png"/>
       <div className="ml-[20%] w-[80%]">
-        <TopBar profileImageUrl="./images/profile.png"/>
+        <TopBar profileImageUrl="/images/profile.png"/>
         <div className="bg-[#F9FAFB] py-6 ps-10 pe-10">
           <div>
             <h1 className="text-3xl text-gray-800 font-bold">Challenges</h1>
@@ -29,7 +29,7 @@ export default function challenges() {
               challenges={[
                 "Design a Dashboard for SokoFund, Fintech Product",
                 "Design a Dashboard for SokoFund, Fintech Product",
-                "Design a Dashboard for SokoFund, Fintech Product",
+                "Design a Dashboard for SokoFund, Fintech Product"
               ]}
               timeLine="12"
             />

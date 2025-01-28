@@ -36,8 +36,9 @@ export default function TopBar({ profileImageUrl}:TopBarProps) {
 
           <Image
             src={profileImageUrl}
-            className="w-12  h-12 "
             alt="Profile Image"
+            width={50}
+            height={50}
           />
         </div>
       </div>

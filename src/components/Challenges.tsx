@@ -9,15 +9,15 @@ interface ChallengesProps {
 
 export default function Challenges({ challenges, timeLine }: ChallengesProps) {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between z-[1]">
       {challenges.map((challenge, index) => (
         <div
           key={index}
           className="border-2 border-gray-200 rounded-xl px-6 w-[30%]"
         >
-          <div className="space-y-6 border-b-2 border-gray-200 py-6">
-            <div className="relative bg-[#2B71F0] py-12 rounded-xl flex justify-center items-center h-[200px]">
-              <Image src="./images/logo.png" alt="Umurava logo" />
+          <div className="space-y-6 border-b-2 border-gray-200 py-6 ">
+            <div className="relative bg-[#2B71F0] py-12 mb-6 rounded-xl flex justify-center items-center h-[200px] ">
+              <Image src="/images/logo.png" alt="Umurava logo" width={50} height={50} />
               <p className="text-2xl font-bold text-white">Umurava</p>
               <button className="absolute top-4 right-2 bg-[#0F973D] text-white font-bold px-6 py-1 rounded-full">
                 Open

@@ -12,6 +12,7 @@ import Link from "next/link";
 import { LiaTelegramPlane } from "react-icons/lia";
 import { useState } from "react";
 import Image from "next/image";
+import { createPortal } from "react-dom";
 
 interface SidebarItemProps {
   logoImageUrl: string;
@@ -26,7 +27,13 @@ export default function SideBar({
   return (
     <div className="w-[20%] h-screen fixed overflow-auto  bg-[#2B71F0] text-center flex flex-col justify-between p-6">
       <div className="space-y-6">
-        <Image src={logoImageUrl} alt="Umurava Logo" className="text-white" />
+        <Image
+          src={logoImageUrl}
+          alt="Umurava Logo"
+          className="text-white"
+          width={50}
+          height={50}
+        />
         <SidebarItem
           href="/"
           icon={<GoHome className=" font-bold " size={25} />}
@@ -39,7 +46,7 @@ export default function SideBar({
         />
 
         <SidebarItem
-        onClick={()=> setCommunityVisible(true)}
+          onClick={() => setCommunityVisible(true)}
           label="Community"
           icon={<HiOutlineUserPlus className=" font-bold" size={25} />}
         />
@@ -60,17 +67,18 @@ export default function SideBar({
           icon={<GoGift className="font-bold" size={20} />}
           label="Refer family & friends"
         />
-        <div className="text-white text-xl flex gap-8 items-center py-12 px-3">
-          <img
+        <div className="text-white text-xl flex gap-4 items-center py-8 px-3">
+          <Image
             src={profileImageUrl}
             alt="Profile image"
-            className="w-10 h-10"
+            width={60}
+            height={50}
           />
           <section>
             <p className="text-start">Hilaire Sh</p>
             <p>hilaire@uidesign</p>
           </section>
-          <GoSignOut className="font-bold" size={25} />
+          <GoSignOut className="font-bold ms-6" size={30} />
         </div>
       </div>
       <Modal
@@ -117,26 +125,34 @@ const Modal: React.FC<{
     return null;
   }
 
-  return (
+  return createPortal(
     <div
-      onClick={handleClose}
-      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+    onClick={handleClose}
+    className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+  >
+    <div
+      onClick={(e) => e.stopPropagation()} 
+      className="bg-white rounded-xl py-24 space-y-6 px-20 text-center w-[30%] shadow-lg"
     >
-      <div className="bg-white rounded-xl py-16 space-y-6 px-6">
-        <LiaTelegramPlane
-          size={150}
-          className="bg-[#D0E0FC] rounded-full text-[#2B71F0] px-6 py-6 mx-auto mb-12"
-        />
+     
+      <LiaTelegramPlane
+        size={100}
+        className="bg-[#D0E0FC] rounded-full text-[#2B71F0] p-6 mx-auto mb-6"
+      />
 
-        <h2 className="text-3xl font-bold">Join our WhatsApp Community</h2>
-        <p className="text-gray-600 text-xl w-[70%] mx-auto">
-          Get notified about the latest projects and hackathons.
-        </p>
+      <h2 className="text-2xl font-bold text-black">Join our WhatsApp Community</h2>
+      <p className="text-gray-600 text-lg mx-auto">
+        Get notified about the latest projects and hackathons.
+      </p>
 
-        <button className="bg-blue-600 text-white text-xl  py-4 px-12 rounded-xl font-medium hover:bg-blue-700">
-          Join
-        </button>
-      </div>
+      <button
+        className="bg-blue-600 text-white text-lg py-3 px-8 rounded-xl font-medium hover:bg-blue-700"
+      >
+        Join
+      </button>
     </div>
+  </div>,
+
+    document.body
   );
 };

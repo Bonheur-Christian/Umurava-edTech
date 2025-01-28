@@ -13,27 +13,32 @@ export default function Details() {
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
-        logoImageUrl="../images/logo.png"
-        profileImageUrl="../images/profile.png"
+        logoImageUrl="/images/logo.png"
+        profileImageUrl="/images/profile.png"
       />
       <div className="ml-[20%] w-[80%]">
         <div className="border-b-2 border-gray-300">
-          <TopBar profileImageUrl="../images/profile.png" />
+          <TopBar profileImageUrl="/images/profile.png" />
         </div>
         <div className="flex gap-6 items-center ps-10 py-6">
-          <div className="border border-gray-200 rounded-md px-4 py-4 ">
+          <div className="border border-gray-200 hover:bg-gray-100 duration-500 rounded-md px-4 py-4">
             <HiArrowSmallLeft />
           </div>
-          <p className="text-gray-600 text-xl ">Go Back</p>
+          <p className="text-gray-600 text-xl">Go Back</p>
           <p className="text-gray-400 text-xl">Challenges & Hackathons \</p>
-          <a href="" className="text-[#2B71F0] text-xl ">
+          <a href="" className="text-[#2B71F0] text-xl">
             Design a Dashboard for Sokofund
           </a>
         </div>
         <div className="bg-[#F9FAFB] py-12 ps-10 flex gap-12 border-t-2 border-gray-200">
           <div className="w-[55%] border-2 border-gray-200 rounded-xl py-10 px-10 space-y-6">
-            <div className="bg-[#2B71F0]  rounded-xl flex justify-center items-center h-[350px]">
-              <Image src="../images/logo.png" alt="Umurava logo" />
+            <div className="bg-[#2B71F0] rounded-xl flex justify-center items-center h-[350px]">
+              <Image
+                src="/images/logo.png"
+                alt="Umurava logo"
+                width={100}
+                height={100}
+              />
               <p className="text-2xl font-bold text-white">Umurava</p>
             </div>
             <div>
@@ -55,8 +60,8 @@ export default function Details() {
                 Key Instructions:
               </h1>
               <p className="text-gray-600 text-xl pb-4">
-                You are free to schedule the clarification call with the team via
-                this
+                You are free to schedule the clarification call with the team
+                via this
               </p>
               <div className="space-y-6">
                 <Instructions
@@ -81,7 +86,7 @@ export default function Details() {
                 />
               </div>
               <div className="py-6">
-                <button className="bg-[#2B71F0] rounded-xl px-10 py-6 text-white text-xl font-medium w-full">
+                <button className="bg-[#2B71F0] hover:bg-blue-700 duration-500 rounded-xl px-10 py-6 text-white text-xl font-medium w-full">
                   Submit your work
                 </button>
               </div>
