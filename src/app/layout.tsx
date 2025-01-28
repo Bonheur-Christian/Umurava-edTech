@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SideBar from "@/components/SideBar";
 
 export const metadata: Metadata = {
   title: "EdTech",
