@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { LiaTelegramPlane } from "react-icons/lia";
 import { useState } from "react";
+import Image from "next/image";
 
 interface SidebarItemProps {
   logoImageUrl: string;
@@ -25,7 +26,7 @@ export default function SideBar({
   return (
     <div className="w-[20%] h-screen fixed overflow-auto  bg-[#2B71F0] text-center flex flex-col justify-between p-6">
       <div className="space-y-6">
-        <img src={logoImageUrl} alt="Umurava Logo" className="text-white" />
+        <Image src={logoImageUrl} alt="Umurava Logo" className="text-white" />
         <SidebarItem
           href="/"
           icon={<GoHome className=" font-bold " size={25} />}

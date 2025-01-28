@@ -7,6 +7,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { BiBriefcase } from "react-icons/bi";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { AiOutlineDollar } from "react-icons/ai";
+import Image from "next/image";
 
 export default function Details() {
   return (
@@ -32,7 +33,7 @@ export default function Details() {
         <div className="bg-[#F9FAFB] py-12 ps-10 flex gap-12 border-t-2 border-gray-200">
           <div className="w-[55%] border-2 border-gray-200 rounded-xl py-10 px-10 space-y-6">
             <div className="bg-[#2B71F0]  rounded-xl flex justify-center items-center h-[350px]">
-              <img src="../images/logo.png" alt="Umurava logo" />
+              <Image src="../images/logo.png" alt="Umurava logo" />
               <p className="text-2xl font-bold text-white">Umurava</p>
             </div>
             <div>

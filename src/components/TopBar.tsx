@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { IoNotificationsOutline } from "react-icons/io5";
 
 interface TopBarProps {
@@ -33,7 +34,7 @@ export default function TopBar({ profileImageUrl}:TopBarProps) {
             size={25}
           />
 
-          <img
+          <Image
             src={profileImageUrl}
             className="w-12  h-12 "
             alt="Profile Image"
