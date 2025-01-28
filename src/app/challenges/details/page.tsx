@@ -15,7 +15,7 @@ export default function Details() {
         logoImageUrl="../images/logo.png"
         profileImageUrl="../images/profile.png"
       />
-      <div className="w-[80%]">
+      <div className="ml-[20%] w-[80%]">
         <div className="border-b-2 border-gray-300">
           <TopBar profileImageUrl="../images/profile.png" />
         </div>

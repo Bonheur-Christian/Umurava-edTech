@@ -23,8 +23,8 @@ export default function SideBar({
 }: SidebarItemProps) {
   const [communityModalVisible, setCommunityVisible] = useState(false);
   return (
-    <div className="w-[20%] min-h-screen bg-[#2B71F0] text-center py-6 px-6">
-      <div className="min-h-screen space-y-6">
+    <div className="w-[20%] h-screen fixed overflow-auto  bg-[#2B71F0] text-center flex flex-col justify-between p-6">
+      <div className="space-y-6">
         <img src={logoImageUrl} alt="Umurava Logo" className="text-white" />
         <SidebarItem
           href="/"
@@ -38,6 +38,7 @@ export default function SideBar({
         />
 
         <SidebarItem
+        onClick={()=> setCommunityVisible(true)}
           label="Community"
           icon={<HiOutlineUserPlus className=" font-bold" size={25} />}
         />
@@ -84,7 +85,7 @@ const SidebarItem: React.FC<{
   icon: React.ReactNode;
   href?: string;
   onClick?: () => void;
-}> = ({ icon, label, href = "/", onClick }) => {
+}> = ({ icon, label, href, onClick }) => {
   const path = usePathname();
 
   const isActive = (pathname: string) => {
@@ -94,9 +95,9 @@ const SidebarItem: React.FC<{
   return (
     <Link
       onClick={onClick}
-      href={href}
+      href={href || "#"}
       className={`flex items-center gap-4 ${
-        isActive(href)
+        href && isActive(href)
           ? "bg-white text-[#2B71F0] rounded-md"
           : "hover:bg-white hover:text-[#2B71F0] hover:rounded-md text-white"
       }  py-3 px-2 duration-300`}

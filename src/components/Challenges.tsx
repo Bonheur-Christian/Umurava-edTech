@@ -1,3 +1,6 @@
+"use client";
+import Link from "next/link";
+
 interface ChallengesProps {
   challenges: string[];
   timeLine: string;
@@ -20,7 +23,7 @@ export default function Challenges({ challenges, timeLine }: ChallengesProps) {
               </button>
             </div>
 
-            <p className="text-2xl font-semibold text-gray-800">{challenge}</p>
+            <Link href={"/challenges/details"} className="text-2xl font-semibold text-gray-800">{challenge}</Link>
             <p className="font-medium">Skills needed:</p>
             <div className="flex gap-4">
               <SkillsButton skill="UX/UI Design" />
