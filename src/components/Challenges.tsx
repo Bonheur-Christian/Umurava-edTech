@@ -5,9 +5,10 @@ import Link from "next/link";
 interface ChallengesProps {
   challenges: string[];
   timeLine: string;
+  href:string, 
 }
 
-export default function Challenges({ challenges, timeLine }: ChallengesProps) {
+export default function Challenges({ challenges, timeLine , href}: ChallengesProps) {
   return (
     <div className="flex justify-between z-[1]">
       {challenges.map((challenge, index) => (
@@ -24,7 +25,7 @@ export default function Challenges({ challenges, timeLine }: ChallengesProps) {
               </button>
             </div>
 
-            <Link href={"/challenges/details"} className="text-2xl font-semibold text-gray-800">{challenge}</Link>
+            <Link href={href} className="text-2xl font-semibold text-gray-800">{challenge}</Link>
             <p className="font-medium">Skills needed:</p>
             <div className="flex gap-4">
               <SkillsButton skill="UX/UI Design" />

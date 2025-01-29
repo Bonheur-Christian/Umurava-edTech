@@ -17,12 +17,17 @@ import { createPortal } from "react-dom";
 interface SidebarItemProps {
   logoImageUrl: string;
   profileImageUrl: string;
+  href: string[];
 }
 
 export default function SideBar({
   logoImageUrl,
   profileImageUrl,
+  href =[],
 }: SidebarItemProps) {
+
+  console.log("href received", href);
+  
   const [communityModalVisible, setCommunityVisible] = useState(false);
   return (
     <div className="w-[20%] h-screen fixed overflow-auto  bg-[#2B71F0] text-center flex flex-col justify-between p-6">
@@ -34,16 +39,21 @@ export default function SideBar({
           width={50}
           height={50}
         />
-        <SidebarItem
-          href="/"
-          icon={<GoHome className=" font-bold " size={25} />}
-          label="Dashboard"
-        />
-        <SidebarItem
-          href="/challenges"
-          icon={<FaRegFileLines className=" font-bold" size={25} />}
-          label="Challenges & Hackathons"
-        />
+        {href && (
+          <SidebarItem
+            href={href[0]}
+            icon={<GoHome className=" font-bold " size={25} />}
+            label="Dashboard"
+          />
+        )}
+
+        {href && (
+          <SidebarItem
+            href={href[1]}
+            icon={<FaRegFileLines className=" font-bold" size={25} />}
+            label="Challenges & Hackathons"
+          />
+        )}
 
         <SidebarItem
           onClick={() => setCommunityVisible(true)}
@@ -52,21 +62,30 @@ export default function SideBar({
         />
       </div>
       <div className="space-y-4">
-        <SidebarItem
-          href="/settings"
-          icon={<VscSettingsGear className="font-bold" size={20} />}
-          label="Settings"
-        />
-        <SidebarItem
-          href="/help"
-          icon={<TfiHeadphoneAlt className="font-bold" size={20} />}
-          label="Help center"
-        />
-        <SidebarItem
-          href="/family"
-          icon={<GoGift className="font-bold" size={20} />}
-          label="Refer family & friends"
-        />
+        {href && (
+          <SidebarItem
+            href={href[2]}
+            icon={<VscSettingsGear className="font-bold" size={20} />}
+            label="Settings"
+          />
+        )}
+
+        {href && (
+          <SidebarItem
+            href={href[3]}
+            icon={<TfiHeadphoneAlt className="font-bold" size={20} />}
+            label="Help center"
+          />
+        )}
+
+        {href && (
+          <SidebarItem
+            href={href[4]}
+            icon={<GoGift className="font-bold" size={20} />}
+            label="Refer family & friends"
+          />
+        )}
+
         <div className="text-white text-xl flex gap-4 items-center py-8 px-3">
           <Image
             src={profileImageUrl}
@@ -127,31 +146,30 @@ const Modal: React.FC<{
 
   return createPortal(
     <div
-    onClick={handleClose}
-    className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-  >
-    <div
-      onClick={(e) => e.stopPropagation()} 
-      className="bg-white rounded-xl py-24 space-y-6 px-20 text-center w-[30%] shadow-lg"
+      onClick={handleClose}
+      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
     >
-     
-      <LiaTelegramPlane
-        size={100}
-        className="bg-[#D0E0FC] rounded-full text-[#2B71F0] p-6 mx-auto mb-6"
-      />
-
-      <h2 className="text-2xl font-bold text-black">Join our WhatsApp Community</h2>
-      <p className="text-gray-600 text-lg mx-auto">
-        Get notified about the latest projects and hackathons.
-      </p>
-
-      <button
-        className="bg-blue-600 text-white text-lg py-3 px-8 rounded-xl font-medium hover:bg-blue-700"
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white rounded-xl py-24 space-y-6 px-20 text-center w-[30%] shadow-lg"
       >
-        Join
-      </button>
-    </div>
-  </div>,
+        <LiaTelegramPlane
+          size={100}
+          className="bg-[#D0E0FC] rounded-full text-[#2B71F0] p-6 mx-auto mb-6"
+        />
+
+        <h2 className="text-2xl font-bold text-black">
+          Join our WhatsApp Community
+        </h2>
+        <p className="text-gray-600 text-lg mx-auto">
+          Get notified about the latest projects and hackathons.
+        </p>
+
+        <button className="bg-blue-600 text-white text-lg py-3 px-8 rounded-xl font-medium hover:bg-blue-700">
+          Join
+        </button>
+      </div>
+    </div>,
 
     document.body
   );

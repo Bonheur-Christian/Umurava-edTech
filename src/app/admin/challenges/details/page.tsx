@@ -8,8 +8,10 @@ import { BiBriefcase } from "react-icons/bi";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { AiOutlineDollar } from "react-icons/ai";
 import Image from "next/image";
+import { CiSearch } from "react-icons/ci";
+import { VscListFilter } from "react-icons/vsc";
 
-export default function Details() {
+export default function AdminChallengesDetails() {
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
@@ -21,15 +23,27 @@ export default function Details() {
         <div className="border-b-2 border-gray-300">
           <TopBar profileImageUrl="/images/profile.png" />
         </div>
-        <div className="flex gap-6 items-center ps-10 py-6">
-          <div className="border border-gray-200 hover:bg-gray-100 duration-500 rounded-md px-4 py-4">
-            <HiArrowSmallLeft />
+        <div className="flex items-center w-[96%] justify-between">
+          <div className="flex gap-6 items-center ps-10 py-6">
+            <div className="border border-gray-200 hover:bg-gray-100 duration-500 rounded-md px-4 py-4">
+              <HiArrowSmallLeft />
+            </div>
+            <p className="text-gray-600 text-xl">Go Back</p>
+            <p className="text-gray-400 text-xl">Challenges & Hackathons \</p>
+            <a href="" className="text-[#2B71F0] text-xl">
+              Design a Dashboard for Sokofund
+            </a>
           </div>
-          <p className="text-gray-600 text-xl">Go Back</p>
-          <p className="text-gray-400 text-xl">Challenges & Hackathons \</p>
-          <a href="" className="text-[#2B71F0] text-xl">
-            Design a Dashboard for Sokofund
-          </a>
+          <div className="flex items-center gap-6">
+            <div className="flex gap-2 items-center text-xl text-gray-500">
+              <CiSearch />
+              <p>Search</p>
+            </div>
+            <div className="flex gap-2 items-center text-xl text-gray-500">
+              <VscListFilter />
+              <p>Filter</p>
+            </div>
+          </div>
         </div>
         <div className="bg-[#F9FAFB] py-12 ps-10 flex gap-12 border-t-2 border-gray-200">
           <div className="w-[55%] border-2 border-gray-200 rounded-xl py-10 px-10 space-y-6">
@@ -86,12 +100,16 @@ export default function Details() {
                   description="Money Prize"
                 />
               </div>
-              <div className="py-6">
-                <button className="bg-[#2B71F0] hover:bg-blue-700 duration-500 rounded-xl px-10 py-6 text-white text-xl font-medium w-full">
-                  Submit your work
+              <div className="py-6 flex gap-8 ">
+                <button className="bg-red-500 hover:bg-blue-700 duration-500 rounded-xl px-10 py-6 text-white text-xl font-medium w-[50%]">
+                  Delete
+                </button>
+                <button className="bg-[#2B71F0] hover:bg-blue-700 duration-500 rounded-xl px-10 py-6 text-white text-xl font-medium w-[50%]">
+                  Edit
                 </button>
               </div>
             </div>
+            <div className="border-2 border-gray-200 rounded-xl px-8 py-10 space-y-6"></div>
           </div>
         </div>
       </div>
@@ -116,3 +134,10 @@ const Instructions: React.FC<{
     </div>
   );
 };
+
+
+const Participants:React.FC<{}> =({})=>{
+    return(
+        <div></div>
+    )
+}
