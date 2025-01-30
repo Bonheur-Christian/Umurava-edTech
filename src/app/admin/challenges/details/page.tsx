@@ -69,7 +69,7 @@ export default function AdminChallengesDetails() {
             </div>
           </div>
 
-          <div className="w-[38%]">
+          <div className="w-[38%] space-y-12">
             <div className="border-2 border-gray-200 rounded-xl px-8 py-10 space-y-6">
               <h1 className="text-2xl text-gray-800 font-bold">
                 Key Instructions:
@@ -109,7 +109,45 @@ export default function AdminChallengesDetails() {
                 </button>
               </div>
             </div>
-            <div className="border-2 border-gray-200 rounded-xl px-8 py-10 space-y-6"></div>
+            <div className="border-2 border-gray-200 rounded-xl px-8">
+              <div className="border-b-2 border-gray-100 mx-[-2rem] w-[113%] ps-8 flex items-center gap-3 py-8">
+                <p className="text-2xl text-gray-700 font-bold ">
+                  Participants
+                </p>
+                <p className="bg-[#2B71F0] text-white px-4 rounded-xl">250</p>
+              </div>
+              <Participants
+                profileImageUrl="/images/profile.png"
+                participant="Hilaire Sh"
+                role="Product Designer"
+              />
+              <Participants
+                profileImageUrl="/images/profile.png"
+                participant="Christian Manzi"
+                role="UX/UI Designer"
+              />
+              <Participants
+                profileImageUrl="/images/profile.png"
+                participant="Jolly Mutesi"
+                role="Content Creator"
+              />
+              <Participants
+                profileImageUrl="/images/profile.png"
+                participant="Dr. Samuel Smith"
+                role="Mental Health Professional"
+              />
+              <Participants
+                profileImageUrl="/images/profile.png"
+                participant="Dr. Lily Chen"
+                role="Dermatologist"
+              />
+
+              <div className="py-6">
+                <button className="bg-[#2B71F0] hover:bg-blue-700 duration-500 rounded-xl px-10 py-6 text-white text-xl font-medium w-full">
+                  View All
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -135,9 +173,18 @@ const Instructions: React.FC<{
   );
 };
 
-
-const Participants:React.FC<{}> =({})=>{
-    return(
-        <div></div>
-    )
-}
+const Participants: React.FC<{
+  profileImageUrl: string;
+  participant: string;
+  role: string;
+}> = ({ profileImageUrl, participant, role }) => {
+  return (
+    <div className="py-8 border-b-2 border-gray-100 mx-[-2rem] w-[113%] ps-8 flex items-center gap-3">
+      <Image src={profileImageUrl} alt="Umurava logo" width={50} height={50} />
+      <div className="">
+        <p className="text-xl text-gray-700 font-medium ">{participant}</p>
+        <p className="text-gray-500 font-medium">{role}</p>
+      </div>
+    </div>
+  );
+};
