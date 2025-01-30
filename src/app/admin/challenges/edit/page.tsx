@@ -79,18 +79,18 @@ export default function AdminEditChallengesDetails() {
               </p>
             </div>
             <div className="px-6 space-y-6">
-              <div className="">
+              <div className="space-y-3">
                 <label htmlFor="title" className="block text-xl text-gray-600">
                   Challenge/ Hackathon title
                 </label>
                 <input
                   type="text"
                   value={"Design a Dashboard For SoKofund"}
-                  className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-2  xl"
+                  className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                 />
               </div>
               <div className="flex items-center w-full gap-6">
-                <div className="flex-1">
+                <div className="flex-1 space-y-3">
                   <label
                     htmlFor="deadline"
                     className="block text-xl text-gray-600"
@@ -100,10 +100,10 @@ export default function AdminEditChallengesDetails() {
                   <input
                     type="text"
                     value={"24/12/2024"}
-                    className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-2xl"
+                    className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                   />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 space-y-3">
                   <label
                     htmlFor="duration"
                     className="block text-xl text-gray-600"
@@ -113,12 +113,12 @@ export default function AdminEditChallengesDetails() {
                   <input
                     type="text"
                     value={"7 Days"}
-                    className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-2xl"
+                    className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                   />
                 </div>
               </div>
               <div className="flex items-center w-full gap-6">
-                <div className="flex-1">
+                <div className="flex-1 space-y-3">
                   <label
                     htmlFor="prize"
                     className="block text-xl text-gray-600"
@@ -128,10 +128,10 @@ export default function AdminEditChallengesDetails() {
                   <input
                     type="text"
                     value={"$150"}
-                    className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-2xl"
+                    className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                   />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 space-y-3">
                   <label
                     htmlFor="email"
                     className="block text-xl text-gray-600"
@@ -141,11 +141,11 @@ export default function AdminEditChallengesDetails() {
                   <input
                     type="text"
                     value={"talent@umurava.africa"}
-                    className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-2xl"
+                    className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                   />
                 </div>
               </div>
-              <div className="py-4">
+              <div className="py-4 space-y-3">
                 <label
                   htmlFor="duration"
                   className="block text-xl text-gray-600"
@@ -159,14 +159,14 @@ export default function AdminEditChallengesDetails() {
                   name="projectBrief"
                   id="projectBrief"
                   rows={7}
-                  className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 text-gray-500 outline-none focus:border-red-300 text-2xl"
+                  className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 text-gray-500 outline-none focus:border-red-300 text-xl"
                 />
                 <p className="text-xl text-gray-500">
                   {" "}
                   Keep this simple of 50 characters
                 </p>
               </div>
-              <div className="py-4">
+              <div className="py-4 space-y-3">
                 <label
                   htmlFor="projectDescription"
                   className="block text-xl text-gray-600"
@@ -177,7 +177,7 @@ export default function AdminEditChallengesDetails() {
                   name="projectDescription"
                   id="projectDescription"
                   rows={7}
-                  className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 text-gray-500 outline-none focus:border-red-300 text-2xl"
+                  className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 text-gray-500 outline-none focus:border-red-300 text-xl"
                   value={text}
                   onChange={handleChange}
                 />
@@ -186,7 +186,7 @@ export default function AdminEditChallengesDetails() {
                   Keep this simple of 250 characters
                 </p>
               </div>
-              <div className="py-4">
+              <div className="py-4 space-y-3">
                 <label
                   htmlFor="requirements"
                   className="block text-xl text-gray-600"
@@ -197,7 +197,7 @@ export default function AdminEditChallengesDetails() {
                   name="requirements"
                   id="requirements"
                   rows={7}
-                  className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 text-gray-500 outline-none focus:border-red-300 text-2xl"
+                  className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 text-gray-500 outline-none focus:border-red-300 text-xl"
                   value={requirementsText}
                   onChange={handleRequirementsChange}
                 />
@@ -206,7 +206,7 @@ export default function AdminEditChallengesDetails() {
                   Keep this simple of 500 characters
                 </p>
               </div>
-              <div className="py-4">
+              <div className="py-4 space-y-3">
                 <label
                   htmlFor="deliverable"
                   className="block text-xl text-gray-600"
@@ -217,7 +217,7 @@ export default function AdminEditChallengesDetails() {
                   name="deliverable"
                   id="deliverable"
                   rows={7}
-                  className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 text-gray-500 outline-none focus:border-red-300 text-2xl"
+                  className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 text-gray-500 outline-none focus:border-red-300 text-xl"
                   value={deliverablesText}
                   onChange={handleDeliverablesChange}
                 />
@@ -226,7 +226,7 @@ export default function AdminEditChallengesDetails() {
                   Keep this simple of 500 characters
                 </p>
               </div>
-              <div className="flex items-center gap-10 w-full">
+              <div className="flex items-center gap-10 w-full py-12">
                 <button className="border-2 border-[#2B71F0] bg-white hover:bg-[#2B71F0] hover:text-white duration-500 text-[#2B71F0] rounded-xl py-6 px-6 w-[35%] text-xl">
                   Cancel
                 </button>
