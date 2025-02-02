@@ -9,8 +9,51 @@ import workSans from "@/fonts/fonts";
 import AdminChallengeCard from "@/components/adminChallengeCard";
 import { TiDocumentText } from "react-icons/ti";
 
-
 export default function AdminDashboard() {
+  const challenges = [
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "open",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "closed",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "closed",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "open",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "open",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "closed",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+  ];
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
@@ -39,9 +82,9 @@ export default function AdminDashboard() {
           </div>
           <div className="flex  gap-6 py-12">
             <AdminChallengeCard
-            width="50"
+              width="50"
               title="Total Challenges"
-              number ="29,450"
+              number="29,450"
               time="This Week"
               icon={
                 <TiDocumentText
@@ -51,9 +94,9 @@ export default function AdminDashboard() {
               }
             />
             <AdminChallengeCard
-            width="50"
+              width="50"
               title="Total Participants"
-              number ="29,450"
+              number="29,450"
               time="This Week"
               icon={
                 <TiDocumentText
@@ -65,9 +108,9 @@ export default function AdminDashboard() {
           </div>
           <div className="flex  gap-6 py-12">
             <AdminChallengeCard
-            width="50"
+              width="50"
               title="Total Challenges"
-              number ="29,450"
+              number="29,450"
               time="This Week"
               icon={
                 <TiDocumentText
@@ -77,9 +120,9 @@ export default function AdminDashboard() {
               }
             />
             <AdminChallengeCard
-            width="50"
+              width="50"
               title="Total Participants"
-              number ="29,450"
+              number="29,450"
               time="This Week"
               icon={
                 <TiDocumentText
@@ -89,9 +132,9 @@ export default function AdminDashboard() {
               }
             />
             <AdminChallengeCard
-            width="50"
+              width="50"
               title="Total Participants"
-              number ="29,450"
+              number="29,450"
               time="This Week"
               icon={
                 <TiDocumentText
@@ -101,7 +144,7 @@ export default function AdminDashboard() {
               }
             />
           </div>
-          
+
           <div className="flex justify-between py-6">
             <p className="text-xl font-medium "> Recent Challenges</p>
             <div className="text-[#2B71F0] flex justify-between items-center gap-2">
@@ -109,15 +152,18 @@ export default function AdminDashboard() {
               <SlArrowRight />
             </div>
           </div>
-          <Challenges
-          href="/challenges/details"
-            challenges={[
-              "Design a Dashboard for SokoFund, Fintech Product",
-              "Design a Dashboard for SokoFund, Fintech Product",
-              "Design a Dashboard for SokoFund, Fintech Product",
-            ]}
-            timeLine="12"
-          />
+          <div className="py-10 flex items-center gap-16 flex-wrap">
+            {challenges.map((item, index) => (
+              <Challenges
+                key={index}
+                challengeId={item.id}
+                challengeName={item.name}
+                status={item.status}
+                skillsRequired={item.skills}
+                timeLine={item.time}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

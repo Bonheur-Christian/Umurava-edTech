@@ -1,12 +1,68 @@
+"use client"
+
 import ChallengeCategoryCard from "@/components/ChallengeCategoriesCard";
 import Challenges from "@/components/Challenges";
 import SideBar from "@/components/SideBar";
 import TopBar from "@/components/TopBar";
 import workSans from "@/fonts/fonts";
 import Link from "next/link";
+import { useState } from "react";
 import { GoPlus } from "react-icons/go";
 
 export default function AdminChallenges() {
+    const [activeIndex, setActiveIndex] = useState(0);
+  
+  const categories = [
+    { category: "All Challenges", number: 0 },
+    { category: "Completed Challenges", number: 0 },
+    { category: "Open Challenges", number: 0 },
+    { category: "Ongoing Challenges", number: 0 },
+  ];
+
+  const challenges = [
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "open",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "closed",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "closed",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "open",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "open",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "closed",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+  ];
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
@@ -24,10 +80,17 @@ export default function AdminChallenges() {
             </p>
           </div>
           <div className="flex gap-4 items-center border-b-2 border-gray-100 py-6">
-            <ChallengeCategoryCard category="All Challenges" number={0} />
-            <ChallengeCategoryCard category="Completed Challenges" number={0} />
-            <ChallengeCategoryCard category="open Challenges" number={0} />
-            <ChallengeCategoryCard category="Ongoing Challenges" number={0} />
+            <div className="flex gap-4 items-center border-b-2 border-gray-100 py-6">
+              {categories.map((item, index) => (
+                <ChallengeCategoryCard
+                  key={index}
+                  category={item.category}
+                  number={item.number}
+                  isActive={activeIndex === index}
+                  onClick={() => setActiveIndex(index)}
+                />
+              ))}
+            </div>
             <Link
               href=""
               className="bg-[#2B71F0] hover:bg-blue-700 rounded-xl text-white font-medium px-6 py-4 flex gap-4 items-center"
@@ -37,25 +100,17 @@ export default function AdminChallenges() {
             </Link>
           </div>
 
-          <div className="space-y-10 py-10">
-            <Challenges
-              href="challenges/details"
-              challenges={[
-                "Design a Dashboard for SokoFund, Fintech Product",
-                "Design a Dashboard for SokoFund, Fintech Product",
-                "Design a Dashboard for SokoFund, Fintech Product",
-              ]}
-              timeLine="12"
-            />
-            <Challenges
-              href="challenges/details"
-              challenges={[
-                "Design a Dashboard for SokoFund, Fintech Product",
-                "Design a Dashboard for SokoFund, Fintech Product",
-                "Design a Dashboard for SokoFund, Fintech Product",
-              ]}
-              timeLine="12"
-            />
+          <div className="py-10 flex items-center gap-16 flex-wrap">
+            {challenges.map((item, index) => (
+              <Challenges
+                key={index}
+                challengeId={item.id}
+                challengeName={item.name}
+                status={item.status}
+                skillsRequired={item.skills}
+                timeLine={item.time}
+              />
+            ))}
           </div>
           <div className="flex justify-between items-center py-10">
             <button className="text-[#98A2B3] rounded-xl py-3 px-12 bg-white">

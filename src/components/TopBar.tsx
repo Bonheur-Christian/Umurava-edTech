@@ -8,7 +8,7 @@ interface TopBarProps {
 export default function TopBar({ profileImageUrl}:TopBarProps) {
   return (
     <>
-      <div className="flex justify-between items-center pb-4  ps-10 pe-10">
+      <div className="sticky top-0 bg-white z-50 flex justify-between items-center pb-4  ps-10 pe-10">
         <div className="relative w-[55%] mt-4">
           <svg
             className="absolute top-1/2 left-4 -translate-y-1/2 w-5 h-5 text-gray-700 cursor-pointer"

@@ -7,8 +7,53 @@ import Challenges from "@/components/Challenges";
 import workSans from "../fonts/fonts";
 import SideBar from "@/components/SideBar";
 import TopBar from "@/components/TopBar";
+import Link from "next/link";
 
 export default function Home() {
+  const challenges = [
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "open",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "closed",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "closed",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "open",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "open",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+    {
+      id: 1,
+      name: "Design a dashboard for SokoFund, FinTech Product",
+      time: "12",
+      status: "closed",
+      skills: ["UX/UI Design", "Research", "User Research"],
+    },
+  ];
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
@@ -42,19 +87,22 @@ export default function Home() {
           <div className="flex justify-between py-6">
             <p className="text-xl font-medium "> Recent Challenges</p>
             <div className="text-[#2B71F0] flex justify-between items-center gap-2">
-              <p className="font-medium">See all</p>
+              <Link href={"/challenges"} className="font-medium">See all</Link>
               <SlArrowRight />
             </div>
           </div>
-          <Challenges
-          href="/challenges/details"
-            challenges={[
-              "Design a Dashboard for SokoFund, Fintech Product",
-              "Design a Dashboard for SokoFund, Fintech Product",
-              "Design a Dashboard for SokoFund, Fintech Product",
-            ]}
-            timeLine="12"
-          />
+          <div className="flex items-center gap-16 flex-wrap">
+            {challenges.map((item, index) => (
+              <Challenges
+                key={index}
+                challengeId={item.id}
+                challengeName={item.name}
+                status={item.status}
+                skillsRequired={item.skills}
+                timeLine={item.time}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
