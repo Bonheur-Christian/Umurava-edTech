@@ -3,7 +3,7 @@ import SideBar from "@/components/SideBar";
 import TopBar from "@/components/TopBar";
 import workSans from "@/fonts/fonts";
 import { HiArrowSmallLeft } from "react-icons/hi2";
-import { useState, ChangeEvent, useEffect } from "react";
+import { useState, ChangeEvent } from "react";
 
 export default function AdminEditChallengesDetails() {
   const [text, setText] = useState<string>("• ");

@@ -1,6 +1,4 @@
 "use client";
-
-import { IoEyeOutline } from "react-icons/io5";
 import { SlArrowRight } from "react-icons/sl";
 import Challenges from "@/components/Challenges";
 import SideBar from "@/components/SideBar";
